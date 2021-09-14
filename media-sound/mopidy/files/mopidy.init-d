@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+# Copyright 2021 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+name="mopidy"
+description="Mopidy is a multifaceted music server"
+command=/usr/bin/mopidy
+command_args="${mopidy_args}"
+
+depend() {
+    need net
+}
+
+start() {
+    ebegin "Starting mopidy"
+    start-stop-daemon --quiet -u mopidy:mopidy --start \
+        -bmp "${MOPIDY_PIDFILE}" \
+        --exec "${MOPIDY_EXEC}" -- --config "/usr/share/mopidy/conf.d:/etc/mopidy/mopidy.conf"
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping mopidy"
+    start-stop-daemon --quiet -u mopidy:mopidy -p "${MOPIDY_PIDFILE}" --stop
+    eend $?
+}

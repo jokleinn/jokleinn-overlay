@@ -1,0 +1,4 @@
+# /etc/conf.d/mopidy: config file for /etc/init.d/mopidy
+
+MOPIDY_EXEC="/usr/bin/mopidy"
+MOPIDY_PIDFILE="/run/mopidy.pid"
