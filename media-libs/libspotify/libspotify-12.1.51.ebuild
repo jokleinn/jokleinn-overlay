@@ -11,7 +11,9 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
+DEPEND="
+	!!media-libs/librespot
+"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 

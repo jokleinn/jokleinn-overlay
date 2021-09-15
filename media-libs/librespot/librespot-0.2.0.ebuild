@@ -268,6 +268,9 @@ SRC_URI="
 	$(cargo_crate_uris)
 	https://github.com/librespot-org/librespot/archive/v${PV}.tar.gz -> ${P}.tar.gz
 "
+RDEPEND="
+	!!media-libs/libspotify
+"
 RESTRICT="mirror"
 # License set may be more restrictive as OR is not respected
 # use cargo-license for a more accurate license picture

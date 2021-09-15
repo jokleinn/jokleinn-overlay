@@ -12,6 +12,8 @@ DESCRIPTION="A Mopidy extension to connect to Spotify."
 HOMEPAGE="https://mopidy.com/"
 SRC_URI="https://github.com/mopidy/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
+IUSE="librespot"
+
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -22,6 +24,8 @@ RDEPEND="
 	media-libs/libspotify
 	dev-python/pykka
 	dev-python/requests
+	librespot? ( media-libs/librespot )
+	!librespot? ( media-libs/libspotify )
 "
 
 DEPEND="
