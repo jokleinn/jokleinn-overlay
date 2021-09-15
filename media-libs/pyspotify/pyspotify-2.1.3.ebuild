@@ -12,13 +12,16 @@ DESCRIPTION="A python interface to Spotify's onlne music streaming service."
 HOMEPAGE="https://github.com/jodal/pyspotify"
 SRC_URI="https://github.com/jodal/pyspotify/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
+IUSE="librespot"
+
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="
 	dev-python/cffi
-	media-libs/libspotify
+	librespot? ( media-libs/librespot )
+	!librespot? ( media-libs/libspotify )
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

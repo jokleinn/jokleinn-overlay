@@ -21,7 +21,6 @@ SLOT="0"
 RDEPEND="
 	media-sound/mopidy
 	media-libs/pyspotify
-	media-libs/libspotify
 	dev-python/pykka
 	dev-python/requests
 	librespot? ( media-libs/librespot )
